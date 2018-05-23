@@ -98,34 +98,48 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var WindowTitle = function (_Component) {
-    _inherits(WindowTitle, _Component);
+var style = {
+    borderRadius: '50%',
+    width: '40px',
+    height: '40px',
+    margin: '90px auto',
+    position: 'relative',
+    borderTop: '3px solid rgba(0, 0, 0, 0.1)',
+    borderRight: '3px solid rgba(0, 0, 0, 0.1)',
+    borderBottom: '3px solid rgba(0, 0, 0, 0.1)',
+    borderLeft: '3px solid rgb(255, 114, 73)',
+    transform: 'translateZ(0)',
+    animation: 'loading-spinner 0.5s infinite linear'
+};
 
-    function WindowTitle(props) {
-        _classCallCheck(this, WindowTitle);
+var LoadingSpinner = function (_React$Component) {
+    _inherits(LoadingSpinner, _React$Component);
 
-        var _this = _possibleConstructorReturn(this, (WindowTitle.__proto__ || Object.getPrototypeOf(WindowTitle)).call(this, props));
+    function LoadingSpinner() {
+        _classCallCheck(this, LoadingSpinner);
 
-        window.document.title = _this.props.title;
-        return _this;
+        return _possibleConstructorReturn(this, (LoadingSpinner.__proto__ || Object.getPrototypeOf(LoadingSpinner)).apply(this, arguments));
     }
 
-    _createClass(WindowTitle, [{
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(newProps) {
-            if (newProps.title !== this.props.title) window.document.title = newProps.title;
-        }
-    }, {
+    _createClass(LoadingSpinner, [{
         key: 'render',
         value: function render() {
-            return null;
+            return _react2.default.createElement(
+                'div',
+                { className: 'loading-spinner', style: style },
+                _react2.default.createElement(
+                    'style',
+                    null,
+                    '\n        @keyframes loading-spinner {\n          0% { transform : rotate(0deg); }\n          100% { transform : rotate(360deg); }\n        }\n        '
+                )
+            );
         }
     }]);
 
-    return WindowTitle;
-}(_react.Component);
+    return LoadingSpinner;
+}(_react2.default.Component);
 
-exports.default = WindowTitle;
+exports.default = LoadingSpinner;
 
 /***/ })
 /******/ ]);
