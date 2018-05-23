@@ -1,6 +1,6 @@
 {
   "name": "loading-spinner-reactjs",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "component reactjs loading spinner fullscreen ",
   "main": "./build/index.js",
   "scripts": {
@@ -24,6 +24,8 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "style-loader": "^0.21.0",
+    "css-loader": "^0.28.11"
   }
 }
